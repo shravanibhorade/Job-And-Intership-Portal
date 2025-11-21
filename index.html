@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JobTrek</title>
 
-    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -15,18 +14,18 @@
             font-family: 'Poppins', sans-serif;
         }
 
-       
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 40px;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .logo { font-size: 22px; font-weight: bold; color: #1976d2; }
+            background: rgb(211, 215, 228);
+            box-shadow: 0 2px 5px rgba(95, 71, 233, 0.1);
+            }
+
+       
         .nav-links { display: flex; gap: 25px; list-style: none; }
-        .nav-links a { color: #333; text-decoration: none; }
+        .nav-links a { color: #0f2ee0; text-decoration: none; }
 
         .auth-buttons a {
             margin-left: 10px;
@@ -35,83 +34,29 @@
             text-decoration: none;
             font-size: 14px;
         }
-        .login { border: 1px solid #1976d2; color: #1976d2; }
-        .register { background: orange; color: white; }
-
+        .logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #1976d2;
+    display: flex;
+    align-items: center;     
+    gap: 10px;               
+}
         
+       
         .hero {
             padding: 60px 20px;
             text-align: center;
-            background: linear-gradient(to bottom right, #e8f3ff, #f3f9ff);
+            background: linear-gradient(to bottom right, #3d18e2f8, #d8e0e9);
         }
         .hero h1 { font-size: 38px; }
         .hero p { font-size: 17px; margin-bottom: 25px; }
 
-        
-        .search-box {
-            display: flex;
-            width: 650px;
-            margin: auto;
-            padding: 6px;
-            background: white;
-            border-radius: 40px;
-            border: 1px solid #ccc;
-            align-items: center;
-        }
-        .search-box input {
-            flex: 1;
-            border: none;
-            padding: 14px;
-            outline: none;
-            font-size: 15px;
-        }
-        #location-input { border-left: 1px solid #ddd; padding-left: 15px; }
-        .search-box button {
-            padding: 13px 28px;
-            border: none;
-            background: #0a66c2;
-            color: white;
-            border-radius: 40px;
-            cursor: pointer;
-        }
-
-       
-        .dropdown-box { position: relative; flex: 1; }
-        .dropdown-list {
-            position: absolute;
-            top: 48px;
-            width: 100%;
-            background: white;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            display: none;
-            max-height: 180px;
-            overflow-y: auto;
-            z-index: 10;
-        }
-        .dropdown-item { padding: 10px; cursor: pointer; }
-        .dropdown-item:hover { background: #eaf3ff; }
-
-      
         .section-separator {
             width: 85%;
             height: 1px;
-            background: #dce6f1;
+            background: #4f9ef3;
             margin: 50px auto;
-        }
-
-        
-        .categories { text-align: center; }
-        .chips-container {
-            display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;
-        }
-        .chip {
-            padding: 10px 20px;
-            border-radius: 20px;
-            background: #f3f9ff;
-            border: 1px solid #cde3f7;
-            color: #0a66c2;
-            cursor: pointer;
         }
 
         
@@ -126,13 +71,14 @@
         .company-card {
             padding: 20px;
             text-align: center;
-            background: white;
+            background: rgb(236, 238, 247);
             border-radius: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #000000;
+            box-shadow: 0 4px 14px rgba(13, 27, 219, 0.781);
+            
         }
         .company-card img { width: 80px; }
 
-       
         .quick-links { text-align: center; }
         .quick-links h2 {
             font-size: 30px;
@@ -163,21 +109,24 @@
             border-radius: 18px;
             text-align: center;
             cursor: pointer;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 14px rgba(7, 39, 221, 0.1);
             transition: .2s;
         }
         .quick-card:hover { transform: translateY(-5px); }
 
         .job-card-link {
-            background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
-            border: 1px solid #90caf9;
+            background: linear-gradient(to bottom right, #79f583, #c8e6c9);
+            border: 1px solid #026607;
+            color: black;
+            box-shadow: 0 4px 14px rgba(13, 219, 13, 0.781);
         }
         .intern-card-link {
-            background: linear-gradient(to bottom right, #e8f5e9, #c8e6c9);
-            border: 1px solid #81c784;
+            background: linear-gradient(to bottom right, #79f583, #c8e6c9);
+            border: 1px solid #026607;
+            color: black;
+            box-shadow: 0 4px 14px rgba(13, 219, 13, 0.781);
         }
 
-       
         .why-us { text-align: center; padding: 40px 20px; }
         .why-grid {
             display: flex;
@@ -188,92 +137,93 @@
         .why-card {
             width: 260px;
             padding: 25px;
-            background: white;
+            background: rgb(187, 196, 236);
             border-radius: 15px;
-            border: 1px solid #ddd;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            border: 1px solid #4812dd;
+            box-shadow: 0 4px 14px rgba(57, 13, 219, 0.61);
             transition: .2s;
         }
         .why-card:hover { transform: translateY(-5px); }
         .why-card img { width: 60px; margin-bottom: 15px; }
 
-       
         .footer {
             margin-top: 60px;
             text-align: center;
             background: #0a66c2;
             padding: 25px 0;
+
+            .body {
+                 font-size: 30px;
+                color:black;
+                 background-color: beige;
+                text-align: left;
+}
+.h2 {
+    text-align: center;
+    font: size 40px;
+    color:white;
+}
         }
         .footer-logo {
-            font-size: 24px;
+            font-size: 40px;
             font-weight: bold;
             color: white;
         }
+        .header {
+  display: flex;
+  align-items: center; 
+  gap: 0px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;       
+    font-size: 35px;
+    font-weight: bold;
+    color: #1976d2;
+}
+
+
+.title {
+  font-size: 28px;
+  margin: 0;
+}
+
     </style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="logo">JobTrek</div>
+        
+  
+<div class="logo">
+    <img id="logo" src="c:\Users\Yash\Pictures\Saved Pictures\photo 3.png" width="60" height="60">
+    <span>JobTREAK</span>
+</div>
+
+
 
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="about.html">About Us</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
 
         <div class="auth-buttons">
-            <a class="login" href="CreateACC.html">Login</a>
+            <a class="login" href="#">Create Account</a>
             
         </div>
     </nav>
 
-    <!-- HERO -->
     <section class="hero">
-        <h1>Find your dream job now</h1>
+        <h1>Find your dream job now!</h1>
         <p>5 lakh+ jobs for you to explore</p>
-
-        <div class="search-box">
-            <input id="job-input" placeholder="Search by title, skill, or company">
-
-            <div class="dropdown-box">
-                <input id="location-input" placeholder="Location">
-
-                <div id="location-list" class="dropdown-list">
-                    <div class="dropdown-item">Bangalore</div>
-                    <div class="dropdown-item">Hyderabad</div>
-                    <div class="dropdown-item">Mumbai</div>
-                    <div class="dropdown-item">Delhi</div>
-                    <div class="dropdown-item">Chennai</div>
-                    <div class="dropdown-item">Pune</div>
-                </div>
-            </div>
-
-            <button id="search-btn">Search</button>
-        </div>
 
         <div id="search-message" style="margin-top:20px; font-size:18px; color:#0a66c2;"></div>
     </section>
 
-    <div class="section-separator"></div>
-
-    <!-- CATEGORIES -->
-    <section class="categories">
-        <h2>Explore Categories</h2>
-        <div class="chips-container">
-            <div class="chip">Remote</div>
-            <div class="chip">Internship</div>
-            <div class="chip">Engineering</div>
-            <div class="chip">MNC</div>
-            <div class="chip">Analytics</div>
-        </div>
-    </section>
-
-    <div class="section-separator"></div>
-
-    <!-- FEATURED COMPANIES -->
     <section class="featured-companies">
         <h2>Featured Companies</h2>
 
@@ -303,29 +253,27 @@
 
     <div class="section-separator"></div>
 
-    <!-- QUICK LINKS -->
     <section class="quick-links">
         <h2>Start Exploring</h2>
 
         <div class="quick-grid">
             <div class="quick-card job-card-link" >
-                <a href="regForm.html">
+                <a href="C:\Users\lab103\Desktop\html prachi\Gauri.html\gauri.html\contactus.html">
                 <h3>Jobs</h3>
                 <p>Find full-time and part-time openings</p></a>
 
             </div>
 
             <div class="quick-card intern-card-link" >
-                < a href="internship.html"
+                <a href="C:\Users\Yash\Downloads\project\internship.html">
                 <h3>Internships</h3>
-                <p>Discover internship opportunities</p>
+                <p>Discover internship opportunities</p></a>
             </div>
         </div>
     </section>
 
     <div class="section-separator"></div>
 
-    <!-- WHY CHOOSE US -->
     <section class="why-us">
         <h2>Why Choose Us?</h2>
 
@@ -352,34 +300,20 @@
 
     <div class="section-separator"></div>
 
-    <!-- FOOTER -->
+    
     <footer class="footer">
         <h2 class="footer-logo">JobTrek</h2>
+         <h2 class="h2">
+ Contact us!!
+</h2>
+<UL>
+    <LI>Your EMAIL : contact@jobtrek.com</LI>
+    <li>Phone no. : 91-1301081031</li>
+</UL>
     </footer>
 
-    <!-- JS -->
-    <script>
-        const locationInput = document.getElementById("location-input");
-        const list = document.getElementById("location-list");
-        const searchBtn = document.getElementById("search-btn");
-
-        // Open dropdown on focus
-        locationInput.addEventListener("focus", () => list.style.display = "block");
-
-        // Filter dropdown items
-        locationInput.addEventListener("keyup", () => {
-            const filter = locationInput.value.toLowerCase();
-            document.querySelectorAll(".dropdown-item").forEach(item => {
-                item.style.display = item.innerText.toLowerCase().includes(filter) ? "block" : "none";
-            });
-        });
-
-        // Click dropdown
-        document.querySelectorAll(".dropdown-item").forEach(item => {
-            item.onclick = () => {
-                locationInput.value = item.innerText;
-                list.style.display = "none";
-            };
+    
+            
 </html>
 
 

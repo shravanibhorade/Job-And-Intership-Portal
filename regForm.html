@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f6f6f6;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 400px;
+        background: lightgoldenrodyellow;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 8px #00000033;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #888;
+    }
+
+    fieldset {
+        border: 1px solid #444;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    legend {
+        font-weight: bold;
+    }
+
+    
+    @media (max-width: 480px) {
+        .container {
+            padding: 15px;
+        }
+        input, select {
+            padding: 8px;
+        }
+    }
+
+    
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background: #333;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .submit-btn:hover {
+        background: #000;
+    }
+    .multi-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown-btn {
+    padding: 10px;
+    border: 1px solid #444;
+    background: #fafafa;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    width: 100%;
+    border: 1px solid #444;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.dropdown-content label {
+    display: block;
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div class="container">
+    <h2 style="text-align: center;">JOBS REG</h2>
+
+    <form action="C:\Users\Yash\Downloads\reg form.html">
+
+        <fieldset><legend>Name</legend>
+            <label>First Name:</label>
+            <input type="text" placeholder="Enter First Name">
+
+            <label>Last Name:</label>
+            <input type="text" placeholder="Enter Last Name">
+        </fieldset><br>
+
+        <fieldset><legend>Email</legend>
+            <input type="email" placeholder="Enter Email">
+        </fieldset><br>
+
+        <fieldset><legend>Date</legend>
+            <input type="date">
+        </fieldset><br>
+
+        <fieldset><legend>Select Gender</legend>
+            <label>Gender:</label>
+            <select>
+                <option value="" disabled selected>Select your gender</option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Others</option>
+            </select>
+        </fieldset><br>
+
+        <fieldset><legend>Phone Number</legend>
+            <label>Enter a phone number:</label>
+            <input type="tel">
+        </fieldset><br>
+
+        <fieldset><legend>Address</legend>
+            <label>Address Line 1:</label>
+            <input type="text">
+
+            <label>Address Line 2 (Optional):</label>
+            <input type="text">
+
+            <label>City:</label>
+            <input type="text">
+
+            <label>State:</label>
+            <select>
+                <option value="" disabled selected>Select your state</option>
+                <option>Tamil Nadu</option>
+                <option>Kerala</option>
+                <option>Karnataka</option>
+                <option>Andhra Pradesh</option>
+                <option>Telangana</option>
+                <option>Maharashtra</option>
+                <option>Gujarat</option>
+                <option>Rajasthan</option>
+                <option>Punjab</option>
+                <option>Haryana</option>
+            </select>
+
+            <label>Pin Code:</label>
+            <input type="text">
+        </fieldset><br>
+
+
+     <fieldset>
+        <label for="Areas of Interest">Areas of Interest:</label>
+  <select name="Areas of Interest" id="Areas of Interest" multiple>
+    <option value="Administration">Administration</option>
+    <option value="Editing">Editing</option>
+    <option value="Translation">Translation</option>
+    <option value="Teaching">Teaching</option>
+    <option value="Data Scientist">Data Scientist</option>
+    <option value="Data Handling">Data Handling</option>
+    <option value="Marketing">Marketing</option>
+    <option value="Social Media">Social Media</option>
+    </select></fieldset>
+
+
+
+           <br> <fieldset><td class="label">Upload CV</td>
+     <td><input type="file" required></td>
+     </fieldset>
+        <button class="submit-btn" type="submit">Submit</button>
+
+    </form>
+</div>
+<script>
+    document.addEventListener("click", function (event) {
+    const dropdown = document.querySelector(".multi-dropdown");
+    const btn = document.querySelector(".dropdown-btn");
+    const content = document.querySelector(".dropdown-content");
+
+    if (btn.contains(event.target)) {
+        content.style.display = content.style.display === "block" ? "none" : "block";
+    } else if (!dropdown.contains(event.target)) {
+        content.style.display = "none";
+    }
+})
+function validateForm()
+             {
+             let fname = document.getElementById("fname").value;
+             if (fname == "") 
+             {
+             alert("Name must be filled out");
+             return false;
+             }
+             var mail = document.getElementById("email").value;
+              var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
+              if (!mail.match(emailPattern)) 
+                {
+              alert("Please enter a valid email address.");
+              return false;
+               }
+               let num = document.getElementById("phone").value;
+               var mobilePattern = /^[0-9]{10}$/;
+               if (!num.match(mobilePattern)) 
+                {
+                   alert("Please enter a valid number.");
+                   return false;
+                }
+             }
+
+</script>
+
+ 
+
+</body>
+</html>
+

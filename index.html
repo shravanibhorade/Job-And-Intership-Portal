@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobTrek</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .logo { font-size: 22px; font-weight: bold; color: #1976d2; }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { color: #333; text-decoration: none; }
+
+        .auth-buttons a {
+            margin-left: 10px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .login { border: 1px solid #1976d2; color: #1976d2; }
+        .register { background: orange; color: white; }
+
+        /* HERO */
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom right, #e8f3ff, #f3f9ff);
+        }
+        .hero h1 { font-size: 38px; }
+        .hero p { font-size: 17px; margin-bottom: 25px; }
+
+        /* SEARCH BAR */
+        .search-box {
+            display: flex;
+            width: 650px;
+            margin: auto;
+            padding: 6px;
+            background: white;
+            border-radius: 40px;
+            border: 1px solid #ccc;
+            align-items: center;
+        }
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 14px;
+            outline: none;
+            font-size: 15px;
+        }
+        #location-input { border-left: 1px solid #ddd; padding-left: 15px; }
+        .search-box button {
+            padding: 13px 28px;
+            border: none;
+            background: #0a66c2;
+            color: white;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+
+        /* DROPDOWN */
+        .dropdown-box { position: relative; flex: 1; }
+        .dropdown-list {
+            position: absolute;
+            top: 48px;
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            display: none;
+            max-height: 180px;
+            overflow-y: auto;
+            z-index: 10;
+        }
+        .dropdown-item { padding: 10px; cursor: pointer; }
+        .dropdown-item:hover { background: #eaf3ff; }
+
+        /* SECTION SPACING */
+        .section-separator {
+            width: 85%;
+            height: 1px;
+            background: #dce6f1;
+            margin: 50px auto;
+        }
+
+        /* CATEGORIES */
+        .categories { text-align: center; }
+        .chips-container {
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;
+        }
+        .chip {
+            padding: 10px 20px;
+            border-radius: 20px;
+            background: #f3f9ff;
+            border: 1px solid #cde3f7;
+            color: #0a66c2;
+            cursor: pointer;
+        }
+
+        /* FEATURED COMPANIES */
+        .featured-companies { text-align: center; }
+        .company-grid {
+            width: 80%;
+            margin: auto;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
+        .company-card {
+            padding: 20px;
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+        .company-card img { width: 80px; }
+
+        /* QUICK ACCESS */
+        .quick-links { text-align: center; }
+        .quick-links h2 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #0a66c2;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+        .quick-links h2::after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: #0a66c2;
+            bottom: 0;
+            left: 25%;
+        }
+        .quick-grid {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+        .quick-card {
+            width: 300px;
+            padding: 35px 25px;
+            border-radius: 18px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            transition: .2s;
+        }
+        .quick-card:hover { transform: translateY(-5px); }
+
+        .job-card-link {
+            background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+            border: 1px solid #90caf9;
+        }
+        .intern-card-link {
+            background: linear-gradient(to bottom right, #e8f5e9, #c8e6c9);
+            border: 1px solid #81c784;
+        }
+
+        /* WHY US */
+        .why-us { text-align: center; padding: 40px 20px; }
+        .why-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .why-card {
+            width: 260px;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            transition: .2s;
+        }
+        .why-card:hover { transform: translateY(-5px); }
+        .why-card img { width: 60px; margin-bottom: 15px; }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            background: #0a66c2;
+            padding: 25px 0;
+        }
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">JobTrek</div>
+
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="auth-buttons">
+            <a class="login" href="#">Login</a>
+            <a class="register" href="#">Register</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Find your dream job now</h1>
+        <p>5 lakh+ jobs for you to explore</p>
+
+        <div class="search-box">
+            <input id="job-input" placeholder="Search by title, skill, or company">
+
+            <div class="dropdown-box">
+                <input id="location-input" placeholder="Location">
+
+                <div id="location-list" class="dropdown-list">
+                    <div class="dropdown-item">Bangalore</div>
+                    <div class="dropdown-item">Hyderabad</div>
+                    <div class="dropdown-item">Mumbai</div>
+                    <div class="dropdown-item">Delhi</div>
+                    <div class="dropdown-item">Chennai</div>
+                    <div class="dropdown-item">Pune</div>
+                </div>
+            </div>
+
+            <button id="search-btn">Search</button>
+        </div>
+
+        <div id="search-message" style="margin-top:20px; font-size:18px; color:#0a66c2;"></div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+        <h2>Explore Categories</h2>
+        <div class="chips-container">
+            <div class="chip">Remote</div>
+            <div class="chip">Internship</div>
+            <div class="chip">Engineering</div>
+            <div class="chip">MNC</div>
+            <div class="chip">Analytics</div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- FEATURED COMPANIES -->
+    <section class="featured-companies">
+        <h2>Featured Companies</h2>
+
+        <div class="company-grid">
+            <div class="company-card">
+                <img src="https://freelogopng.com/images/all_img/1657952641google-logo-png-image.png">
+                <p>Google</p>
+            </div>
+            <div class="company-card">
+                <img src="https://purepng.com/public/uploads/large/purepng.com-microsoft-logo-iconlogobrand-logoiconslogos-251519939091wmudn.png">
+                <p>Microsoft</p>
+            </div>
+            <div class="company-card">
+                <img src="https://pngimg.com/uploads/amazon/amazon_PNG5.png">
+                <p>Amazon</p>
+            </div>
+            <div class="company-card">
+                <img src="https://static.vecteezy.com/system/resources/previews/020/336/451/non_2x/infosys-logo-infosys-icon-free-free-vector.jpg">
+                <p>Infosys</p>
+            </div>
+            <div class="company-card">
+                <img src="https://indiancompanies.in/wp-content/uploads/2020/05/TCS-Logo-Tata-consultancy-service-1920x1144.png">
+                <p>TCS</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- QUICK LINKS -->
+    <section class="quick-links">
+        <h2>Start Exploring</h2>
+
+        <div class="quick-grid">
+            <div class="quick-card job-card-link" >
+                <a href="C:\Users\lab103\Desktop\html prachi\Gauri.html\gauri.html\contactus.html"
+                <h3>Jobs</h3>
+                <p>Find full-time and part-time openings</p></a>
+
+            </div>
+
+            <div class="quick-card intern-card-link" onclick="alert('Opening Internships...')">
+                <h3>Internships</h3>
+                <p>Discover internship opportunities</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-us">
+        <h2>Why Choose Us?</h2>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135692.png">
+                <h3>Verified Jobs</h3>
+                <p>We list only authentic job and internship opportunities.</p>
+            </div>
+
+            <div class="why-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
+                <h3>Easy to Use</h3>
+                <p>Clean interface makes job searching simple and stress-free.</p>
+            </div>
+
+            <div class="why-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png">
+                <h3>Updated Daily</h3>
+                <p>Fresh openings added regularly to help you stay ahead.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h2 class="footer-logo">JobTrek</h2>
+    </footer>
+
+    <!-- JS -->
+    <script>
+        const locationInput = document.getElementById("location-input");
+        const list = document.getElementById("location-list");
+        const searchBtn = document.getElementById("search-btn");
+
+        // Open dropdown on focus
+        locationInput.addEventListener("focus", () => list.style.display = "block");
+
+        // Filter dropdown items
+        locationInput.addEventListener("keyup", () => {
+            const filter = locationInput.value.toLowerCase();
+            document.querySelectorAll(".dropdown-item").forEach(item => {
+                item.style.display = item.innerText.toLowerCase().includes(filter) ? "block" : "none";
+            });
+        });
+
+        // Click dropdown
+        document.querySelectorAll(".dropdown-item").forEach(item => {
+            item.onclick = () => {
+                locationInput.value = item.innerText;
+                list.style.display = "none";
+            };
+</html>

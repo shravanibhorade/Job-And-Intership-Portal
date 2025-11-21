@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    
+        <head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f6f6f6;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 400px;
+        background: lightgoldenrodyellow;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 8px #00000033;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #888;
+    }
+
+    fieldset {
+        border: 1px solid #444;
+        padding: 15px;
+        border-radius: 8px;
+    }fieldset {
+        border: 1px solid #444;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    legend {
+        font-weight: bold;
+    }
+
+    
+    @media (max-width: 480px) {
+        .container {
+            padding: 15px;
+        }
+        input, select {
+            padding: 8px;
+        }
+    }
+
+    
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background: #333;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .submit-btn:hover {
+        background: #000;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2 style="text-align: center;">INTERNSHIP REG</h2>
+
+    <form  action="C:\Users\Yash\Downloads\internship form.html">
+
+        <fieldset><legend>Name</legend>
+            <label>First Name:</label>
+            <input type="text" placeholder="Enter First Name">
+
+            <label>Last Name:</label>
+            <input type="text" placeholder="Enter Last Name">
+        </fieldset><br>
+
+        <fieldset><legend>Email</legend>
+            <input type="email" placeholder="Enter Email">
+        </fieldset><br>
+
+        <fieldset><legend>Date</legend>
+            <input type="date">
+        </fieldset><br>
+
+        <fieldset><legend>Select Gender</legend>
+            <label>Gender:</label>
+            <select>
+                <option value="" disabled selected>Select your gender</option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Others</option>
+            </select>
+        </fieldset><br>
+
+        <fieldset><legend>Phone Number</legend>
+            <label>Enter a phone number:</label>
+            <input type="tel">
+        </fieldset><br>
+
+        <fieldset><legend>Address</legend>
+            <label>Address Line 1:</label>
+            <input type="text">
+
+            <label>Address Line 2 (Optional):</label>
+            <input type="text">
+
+            <label>City:</label>
+            <input type="text">
+
+            <label>State:</label>
+            <select>
+                <option value="" disabled selected>Select your state</option>
+                <option>Tamil Nadu</option>
+                <option>Kerala</option>
+                <option>Karnataka</option>
+                <option>Andhra Pradesh</option>
+                <option>Telangana</option>
+                <option>Maharashtra</option>
+                <option>Gujarat</option>
+                <option>Rajasthan</option>
+                <option>Punjab</option>
+                <option>Haryana</option>
+            </select>
+
+            <label>Pin Code:</label>
+            <input type="text">
+        </fieldset><br>
+        <fieldset><label>College/University Name</label>
+            <input type="text">
+        </fieldset><br>
+        <fieldset><td class="label">Upload CV</td>
+     <td><input type="file" required></td>
+     </fieldset></fieldset>
+
+     <br><fieldset><legend>Personal Statement</legend>
+     <label></label>
+            <input type="text" >
+            </fieldset>
+       
+       <br> <fieldset><legend>Areas Of Interset</legend>
+           
+            <form action="/action_page.php">
+  <label for="Areas of Interest">Areas of Interest:</label>
+  <select name="Areas of Interest" id="Areas of Interest" multiple>
+    <option value="Administration">Administration</option>
+    <option value="Editing">Editing</option>
+    <option value="Translation">Translation</option>
+    <option value="Teaching">Teaching</option>
+    <option value="Data Scientist">Data Scientist</option>
+    <option value="Data Handling">Data Handling</option>
+    <option value="Marketing">Marketing</option>
+    <option value="Social Media">Social Media</option>
+    
+  </select>
+  <br><br>
+        
+
+
+        <button class="submit-btn" type="submit">Submit</button>
+
+    </form>
+</div>
+
+</body>
+
+
+    
+</html>

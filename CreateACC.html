@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 350px;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-size: 14px;
+        color: #555;
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border: 1px solid #bbb;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #333;
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        background: #333;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #000;
+    }
+
+    @media (max-width: 450px) {
+        .card {
+            padding: 20px;
+        }
+
+        input, .btn {
+            padding: 10px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Create Account</h2>
+
+    <label>Full Name</label>
+    <input type="text" placeholder="Enter your full name">
+
+    <label>Email</label>
+    <input type="email" placeholder="Enter your email">
+
+    <label>Password</label>
+    <input type="password" placeholder="Create a password">
+
+    <button class="btn">Sign Up</button>
+</div>
+
+</body>
+</html>
+
+

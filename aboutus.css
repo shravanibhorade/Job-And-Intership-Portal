@@ -1,0 +1,9 @@
+.intro-section {
+    text-align: center;
+    font-size: 29px;
+    background-color: #FFFDD0; 
+    color: brown;
+    padding: 30px;
+    margin: 40px;  
+    border-radius: 10px;
+}
